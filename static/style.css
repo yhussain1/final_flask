@@ -1,0 +1,95 @@
+/*
+Flask CSS
+*/
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #f0f0f0;
+}
+
+body, input, textarea, select {
+	font-family: 'Source Sans Pro';
+	font-weight: 300;
+	color: #777;
+	line-height: 1.65em;
+	font-size: 15pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #888;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	text-decoration: none;
+	border: 0;
+}
+
+h2 {
+	font-size: 1.65em;
+	font-weight: 400;
+	letter-spacing: 4px;
+	margin: 0 0 1.5em 0;
+	line-height: 1.75em;
+}
+
+/* centralising the image */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* centralise the page's main heading */
+h1 {
+    text-align: center;
+    top: auto;
+    color: green;
+}
+
+/* Second heading size adjust */
+h2 {
+    font-size: 30px;
+}
+
+/* adjust text size */
+p {
+    font-size: 20px;
+}
+
+/* layout styling of the 'body' of the page */
+.apple {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+/* coloured the RECIPES link */
+.recipes-link {
+    color: green;
+}
+
+/* Centre align text */
+.center {
+    text-align: center;
+    border: 3px solid green;
+}
+
+/* search button coloured */
+.button-success {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(28, 184, 65);
+}

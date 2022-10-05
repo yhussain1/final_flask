@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The viewport meta element lets you control the width and scale of the viewport on mobile browsers. -->
+        <title>The Food Flask </title>
+        <link rel="icon" type="image/x-icon" href="/static/images/flask.ico">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <!-- link to pureCSS.io -->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
+        <!--img class="pure-img" src="" alt="Food in a flask" width="200"><br>-->
+
+
+    <title>{% block title %} Base page {% endblock %}</title>
+  </head>
+    <body>
+        {% block content %}
+         {% endblock %}
+    </body>
+</html>

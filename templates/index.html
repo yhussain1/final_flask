@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+    {% block title%}
+    Search
+    {% endblock %}
+    {% block content %}
+        <h1>The Food Flask Website</h1>
+        <body class="pure-u-3-3 apple">
+        <div class = "center">
+        <p>
+
+            Feeling <strong>Hungry</strong>?<br>
+            We will use this website to find any food recipe you would like.<br>
+            Enter the ingredient you want to include, the cuisine type, any dietary requirements and maximum prep time then watch the searcher do its thing!<br>
+            It couldn't be that much <strong>easier</strong>.
+        </p>
+            <!--A table in the form of a csv file using pandas is saved on the user's device for future reference,
+            and then shown on the recipes.html webpage.<br>
+            The csv file is overwritten on each run of the search and a new recipes.html is created. -->
+        </div>
+
+        <!-- Form that links to main.py. User inputs their search details here and it is POSTed to main.py -->
+        <div>
+<form class="pure-form pure-form-stacked" method="POST" action="/">
+    <fieldset class = "search-box">
+	Please enter your preferences <br><br>
+        <legend><h2>Recipe Search</h2></legend>
+        <label>Ingredient</label>
+        <input type="text" pattern="[A-Za-z]{1,20}" class="pure-input" placeholder="Bread" name="userfood" required/>
+	    <br><i><small>&emsp;&emsp;&emsp;&emsp;&emsp; 1 word, maximum 20 letters</small></i> <br><br>
+
+        <label>Cuisine Type</label>
+        <select id="usercuisine" name="usercuisine" required>
+            <option>American</option>
+            <option>Asian</option>
+            <option>British</option>
+            <option>Caribbean</option>
+            <option>Central Europe</option>
+            <option>Chinese</option>
+            <option>Eastern Europe</option>
+            <option>French</option>
+            <option>Indian</option>
+            <option>Italian</option>
+            <option>Japanese</option>
+            <option>Kosher</option>
+            <option>Mediterranean</option>
+            <option>Mexican</option>
+            <option>Middle Eastern</option>
+            <option>Nordic</option>
+        </select>
+        <br><br>
+
+        <label>Dietary Requirements</label>
+        <select id="userhealth" name="userhealth">
+            <option>none</option>
+            <option>vegan</option>
+            <option>vegetarian</option>
+            <option>paleo</option>
+            <option>dairy-free</option>
+            <option>gluten-free</option>
+            <option>wheat-free</option>
+            <option>egg-free</option>
+            <option>peanut-free</option>
+            <option>tree-nut-free</option>
+            <option>soy-free</option>
+            <option>fish-free</option>
+            <option>shellfish-free</option>
+        </select>
+        <br><br>
+
+        <label>Maximum Preparation time</label>
+        <br><input type="number" min="1" class="pure-input" placeholder="10" name="usertime" value="10" />
+        <br><i><small>minutes</small></i>
+        <br>
+        <button type="submit" class="pure-button pure-button-primary">Search</button>
+
+        <!-- checking if food 'ingredient' input exists if not will ask to full the box -->
+        <br>
+        {% if ingredient and max_time %}
+        <p>
+            <strong>Search completed!</strong><br>
+		    Here are your
+            <a href="{{ url_for('recipes_html') }}" target="_blank"><strong><span class = "recipes-link">RECIPES</span></strong></a>. Enjoy cooking!
+            <br>
+        </p>
+        {% endif %}
+    </fieldset>
+    </form>
+    </div>
+    <br>
+{% endblock %}
